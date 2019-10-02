@@ -99,7 +99,3 @@ self.addEventListener('fetch', (evt) => {
 	    })
 	);
 });
-// CODELAB: Update cache names any time any of the cached files change.
-const FILES_TO_CACHE = [
-  '/offline.html',
-];
