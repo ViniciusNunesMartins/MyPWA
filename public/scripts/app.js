@@ -73,7 +73,6 @@ function removeLocation(evt) {
  */
 function renderForecast(card, data) {
   if (!data) {
-    // There's no data, skip the update.
     return;
   }
 
@@ -122,8 +121,10 @@ function renderForecast(card, data) {
     const forecast = data.daily.data[index + 1];
     const forecastFor = luxon.DateTime
         .fromSeconds(forecast.time)
-        .setZone(data.timezone)
-        .toFormat('ccc');
+        .setZone(data.timezone)  // CODELAB: Add code to log the event
+
+        .toFormat('ccc');  // CODELAB: Add code to log the event
+
     tile.querySelector('.date').textContent = forecastFor;
     tile.querySelector('.icon').className = `icon ${forecast.icon}`;
     tile.querySelector('.temp-high .value')
